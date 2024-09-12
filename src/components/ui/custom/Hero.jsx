@@ -25,7 +25,7 @@ function Hero() {
       <img
         src="/landing.jpg"
         alt="hero"
-        className="w-full h-full mt-20 mb-40"
+        className="w-full h-auto mt-16 mb-32 sm:mt-20 sm:mb-36 md:mt-24 md:mb-40 lg:mt-28 lg:mb-48"
       />
     </div>
   );
