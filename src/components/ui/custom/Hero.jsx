@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <div className="flex flex-col items-center mx-56 gap-9">
+    <div className="flex flex-col items-center mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-56 gap-6 sm:gap-8 md:gap-9 lg:gap-10">
       <h1 className="text-center font-extrabold mt-16 px-4 sm:px-6 md:px-8 lg:px-12 text-[32px] sm:text-[36px] md:text-[40px] lg:text-[50px]">
         <span className="text-[#3dce86] block text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px]">
           Discover Your Next Adventure with AI:
