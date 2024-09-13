@@ -20,28 +20,28 @@ function Footer() {
             target="_blank"
             className="hover:text-gray-400 transition"
           >
-            <HiOutlineMail size={30} color="#03C988" />
+            <HiOutlineMail size={24} color="#03C988" />
           </a>
           <a
             href="https://twitter.com/kay_dev24"
             target="_blank"
             className="hover:text-gray-400 transition"
           >
-            <FaXTwitter size={30} color="#03C988" />
+            <FaXTwitter size={24} color="#03C988" />
           </a>
           <a
             href="https://www.linkedin.com/in/justice-duah-7ab6b4239/"
             target="_blank"
             className="hover:text-gray-400 transition"
           >
-            <FaLinkedin size={30} color="#03C988" />
+            <FaLinkedin size={24} color="#03C988" />
           </a>
           <a
             href="https://wa.me/0547099317"
             target="_blank"
             className="hover:text-gray-400 transition"
           >
-            <IoLogoWhatsapp size={30} color="#03C988" />
+            <IoLogoWhatsapp size={24} color="#03C988" />
           </a>
         </div>
       </div>

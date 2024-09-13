@@ -163,7 +163,7 @@ function CreateTrip() {
             <div
               key={index}
               onClick={() => handleInputChange("budget", item.title)}
-              className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg
+              className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg  flex flex-col items-center md:items-start text-center md:text-left
                   ${
                     formData.budget === item.title && "shadow-lg border-black"
                   }  
@@ -188,16 +188,16 @@ function CreateTrip() {
               onClick={() =>
                 handleInputChange("NumberofTravelers", item.people)
               }
-              className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg
+              className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg flex flex-col items-center md:items-start text-center md:text-left
                 ${
                   formData.NumberofTravelers === item.people &&
                   "shadow-lg border-black"
                 }  
               `}
             >
-              <h2 className="text-4xl">{item.icon}</h2>
-              <h2 className="font-bold text-lg">{item.title}</h2>
-              <h2 className="text-gray-500 text-sm">{item.desc}</h2>
+               <h2 className="text-4xl md:text-5xl mb-2 text-blue-500">{item.icon}</h2>
+               <h2 className="font-bold text-lg md:text-xl mb-1">{item.title}</h2>
+               <h2 className="text-gray-500 text-sm md:text-base">{item.desc}</h2>
             </div>
           ))}
         </div>
