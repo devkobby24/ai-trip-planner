@@ -75,12 +75,14 @@ function Header() {
                 />
               </PopoverTrigger>
               <PopoverContent>
+                <a href="/">
                 <Button onClick={()=>{
                   googleLogout();
                   localStorage.clear();
                   // navigation("/")
                   window.location.reload();
                 }}>Log Out</Button>
+                </a>
               </PopoverContent>
             </Popover>
           </div>
