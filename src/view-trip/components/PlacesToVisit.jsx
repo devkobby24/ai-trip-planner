@@ -29,52 +29,37 @@ function PlacesToVisit({ trip }) {
       <h2 className="font-bold text-lg">Places To Visit</h2>
       <div>
         {/* Access tripData from the trip prop */}
-        {trip?.tripData?.itinerary?.map((item, index) => (
-          <div key={index} className="mt-5">
-            {/* Display day name */}
-            <h2 className="font-medium text-lg">{`Day ${index + 1}`}</h2>
-            {/* Loop through Plan array */}
-            <div className="grid md:grid-cols-2 gap-5">
-              {item.day.plan.map((place, placeIndex) => (
-                <div className="my-3" key={placeIndex}>
-                  <h2 className="font-medium text-sm text-orange-500">
-                    🕟 {place.time}
-                  </h2>
-                  {/* Pass place data to PlaceCardItem */}
-                  <PlaceCardItem place={place} />
+        {trip?.tripData?.itinerary &&
+          Object.keys(trip.tripData.itinerary).map((dayKey, index) => {
+            const dayPlan = trip.tripData.itinerary[dayKey];
+            return (
+              <div key={index} className="mt-5">
+                {/* Display day name */}
+                <h2 className="font-medium text-lg">{`Day ${index + 1}`}</h2>
+                {/* Loop through morning, afternoon, and evening plans */}
+                <div className="grid md:grid-cols-2 gap-5">
+                  {["morning", "afternoon", "evening"].map(
+                    (timeOfDay, placeIndex) => {
+                      const place = dayPlan[timeOfDay];
+                      return (
+                        place && (
+                          <div className="my-3" key={placeIndex}>
+                            <h2 className="font-medium text-sm text-orange-500">
+                              🕟 {place.time}
+                            </h2>
+                            {/* Pass place data to PlaceCardItem */}
+                            <PlaceCardItem place={place} />
+                          </div>
+                        )
+                      );
+                    }
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
-        ))}
+              </div>
+            );
+          })}
       </div>
     </div>
-
-//     <div>
-//   <h2 className="font-bold text-lg">Places To Visit</h2>
-//   <div>
-//     {/* Access tripData from the trip prop */}
-//     {trip?.tripData?.itinerary?.day.map((item, index) => (
-//       <div key={index} className="mt-5">
-//         {/* Display day name */}
-//         <h2 className="font-medium text-lg">{`Day ${index + 1}`}</h2>
-//         {/* Loop through morning, afternoon, and evening */}
-//         <div className="grid md:grid-cols-2 gap-5">
-//           {Object.entries(item.plan).map(([timeOfDay, place], placeIndex) => (
-//             <div className="my-3" key={placeIndex}>
-//               <h2 className="font-medium text-sm text-orange-500">
-//                 🕟 {place.time}
-//               </h2>
-//               {/* Pass place data to PlaceCardItem */}
-//               <PlaceCardItem place={place} />
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     ))}
-//   </div>
-// </div>
-
   );
 }
 

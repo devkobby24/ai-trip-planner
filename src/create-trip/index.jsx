@@ -146,7 +146,15 @@ function CreateTrip() {
           <Input
             placeholder={"Ex.3"}
             type={"number"}
-            onChange={(e) => handleInputChange("noOfdays", e.target.value)}
+            min='1'
+            onChange={(e) => {
+              const value = parseInt(e.target.value, 10);
+              if (value > 0 && value < 6) {
+                handleInputChange("noOfdays", value);
+              } else {
+                e.target.value = ""; // Clear the input if it's 0,negative or more than 5
+              }
+            }}
           />
         </div>
       </div>
