@@ -15,7 +15,7 @@ export const SelectTraveleroptions = [
   },
   {
     id: 3,
-    title: "Friends' Road Trip",
+    title: "Friends Road Trip",
     desc: "A spontaneous drive across scenic routes with friends.",
     icon: "🚗",
     people: "3",
