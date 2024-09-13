@@ -154,7 +154,8 @@ function CreateTrip() {
       <div>
         <h2 className="text-xl my-3 font-medium">
           What is Your Budget?
-          <br />
+        </h2>
+        <h2 className="text-gray-600 text-lg">
           The budget is exclusively allocated for activities and dining
           purposes.
         </h2>

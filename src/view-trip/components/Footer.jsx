@@ -6,7 +6,7 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 function Footer() {
   return (
-    <footer className=" py-6 w-full">
+    <div className="p-3 shadow-sm flex justify-between items-center px-5">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-left ml-2 flex flex-row gap-5">
           <h2 className="text-sm text-gray-400">👨🏾‍💻 ツ</h2>
@@ -45,7 +45,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
 
