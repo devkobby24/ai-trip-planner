@@ -68,5 +68,5 @@ export const SelectBudgetOptions = [
     icon: "💳",
   },
 ];
-export const AI_PROMPT="Generate a travel plan for location: {location}, for {totalDays} days for {traveler} travelers with a budget of {budget}. Provide a list of hotel options that includes the hotelName, hotelAddress, price, hotelImageUrl, geoCoordinates, rating, and descriptions. Suggest itineraries for each day with the placeName, placeDetails, placeImageUrl, geoCoordinates, ticketPricing, and time for each location. Organize the data such that each day has its own plan, with each plan divided into morning, afternoon, and evening activities. The plan for each day should be stored in an array under the 'day' variable, and the entire trip should be stored under the 'itinerary' variable. Ensure all variable names are in camelCase format and that the object structure is consistent in JSON format.";
+export const AI_PROMPT="Generate a travel plan for location: {location}, for {totalDays} days for {traveler} travelers with a budget of {budget}. Give me a Hotels options list with the hotelName, hotelAddress, price, hotelImageUrl, geoCoordinates, rating, and descriptions and suggest itinerary  with placeName, placeDetails, placeImageUrl, geoCoordinates, ticketPricing, rating and time to travel each of the location for {totalDays} days with each day plan with best time to visit JSON format.";
 

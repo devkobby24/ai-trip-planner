@@ -32,7 +32,7 @@ function UserTripCardItem({ trip }) {
           📍 {trip?.userSelection?.location}
         </h2>
         <h2 className="text-sm text-gray-500">
-          🏞️ {trip.userSelection.noOfdays} days trip with{" "}
+          🏞️ {trip.userSelection.noOfdays}-day trip with{" "}
           {trip.userSelection.budget} budget{" "}
         </h2>
       </div>
