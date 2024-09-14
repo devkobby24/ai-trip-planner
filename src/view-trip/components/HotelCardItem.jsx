@@ -15,7 +15,7 @@ function HotelCardItem({ hotel }) {
       //   console.log(resp.data.places[0].photos[3].name);
       const PhotoUrl = PHOTO_REF_URL.replace(
         "{NAME}",
-        resp.data.places[0].photos[3].name
+        resp.data.places[0].photos[5].name
       );
       setPhotoUrl(PhotoUrl);
     });

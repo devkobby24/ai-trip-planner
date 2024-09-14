@@ -26,7 +26,7 @@ function PlacesToVisit({ trip }) {
             <div key={index} className="mt-5">
               {/* Display the day name */}
               <h2 className="font-medium text-lg">{`Day ${index + 1}`}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Loop through morning, afternoon, and evening */}
                 {["morning", "afternoon", "evening"].map((timeOfDay) => {
                   const place = trip.tripData.itinerary[dayKey][timeOfDay];

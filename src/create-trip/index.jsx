@@ -82,7 +82,7 @@ function CreateTrip() {
       toast("Please fill all the fields.");
       return;
     }
-    // console.log(formData);
+
     setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData?.location)
       .replace("{totalDays}", formData?.noOfdays)
@@ -204,9 +204,9 @@ function CreateTrip() {
                 }  
               `}
             >
-               <h2 className="text-4xl md:text-5xl mb-2 text-blue-500">{item.icon}</h2>
-               <h2 className="font-bold text-lg md:text-xl mb-1">{item.title}</h2>
-               <h2 className="text-gray-500 text-sm md:text-base">{item.desc}</h2>
+               <h2 className="text-4xl">{item.icon}</h2>
+               <h2 className="font-bold text-lg ">{item.title}</h2>
+               <h2 className="text-gray-500 text-sm ">{item.desc}</h2>
             </div>
           ))}
         </div>

@@ -16,7 +16,7 @@ function InfoSection({ trip }) {
       // console.log(resp.data.places[0].photos[3].name);
       const PhotoUrl = PHOTO_REF_URL.replace(
         "{NAME}",
-        resp.data.places[0].photos[0].name
+        resp.data.places[0].photos[7].name
       );
       setPhotoUrl(PhotoUrl);
     });
