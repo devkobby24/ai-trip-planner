@@ -47,12 +47,12 @@ function InfoSection({ trip }) {
         alt="placeholder"
         className="h-[350px] w-full object-cover rounded-xl"
       />
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center ">
         <div className="my-5 flex flex-col gap-2">
           <h2 className="font-bold text-2xl">
             {trip?.userSelection?.location}
           </h2>
-          <div className="flex gap-5">
+          <div className="flex xs:flex-col gap-2">
             <h2 className="p-1 px-3 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
               📅 {trip?.userSelection?.noOfdays} Day(s)
             </h2>
