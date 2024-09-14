@@ -81,16 +81,16 @@ function CreateTrip() {
     ) {
       toast("Please fill all the fields.");
       return;
+    } else {
+      setLoading(true);
     }
-
-    setLoading(true);
+      
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData?.location)
       .replace("{totalDays}", formData?.noOfdays)
       .replace("{traveler}", formData?.NumberofTravelers)
       .replace("{budget}", formData?.budget)
       .replace("{totalDays}", formData?.noOfdays);
 
-    // console.log(FINAL_PROMPT);
 
     const result = await chatSession.sendMessage(FINAL_PROMPT);
     // console.log("--", result?.response?.text());
@@ -164,8 +164,7 @@ function CreateTrip() {
           What is Your Budget?
         </h2>
         <h2 className="text-gray-600 text-lg">
-          The budget is exclusively allocated for activities and dining
-          purposes.
+        The budget is specifically reserved for activities and dining expenses.
         </h2>
         <div className="grid grid-cols-3 mt-5 gap-5">
           {SelectBudgetOptions.map((item, index) => (
