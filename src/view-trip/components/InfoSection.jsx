@@ -47,7 +47,7 @@ function InfoSection({ trip }) {
         alt="placeholder"
         className="h-[350px] w-full object-cover rounded-xl"
       />
-      <div className="flex justify-between items-center ">
+      <div className="flex justify-between items-center gap-5">
         <div className="my-5 flex flex-col gap-2">
           <h2 className="font-bold text-2xl">
             {trip?.userSelection?.location}
@@ -56,20 +56,26 @@ function InfoSection({ trip }) {
             <h2 className="p-1 px-3 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
               📅 {trip?.userSelection?.noOfdays} Day(s)
             </h2>
-            <h2 className="p-1 px-3 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
+            <h2 className="py-1 px-1.5 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
               💰 {trip?.userSelection?.budget} Budget
             </h2>
             <h2 className="p-1 px-3 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
               🥂 {trip?.userSelection?.NumberofTravelers} Traveler(s)
             </h2>
-            
           </div>
         </div>
-            <Button onClick={deleteTrip} variant="destructive" className="ml-full" alt="Delete Trip">
-              <MdDeleteSweep />
-            </Button>
+        <Button
+          onClick={deleteTrip}
+          variant="destructive"
+          className="rounded-full mt-9"
+        >
+          {/* Show icon on small screens, text on larger screens */}
+          <span className="block sm:hidden">
+            <MdDeleteSweep />
+          </span>
+          <span className="hidden sm:block">Delete</span>
+        </Button>
       </div>
-      
     </div>
   );
 }
