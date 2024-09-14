@@ -41,7 +41,7 @@ function MyTrips() {
         {userTrips?.length>0?userTrips.map((trip, index) => (
           <UserTripCardItem key={index} trip={trip}  />
         ))
-      :[photo,photo,photo,photo,photo,photo].map((item,index) => (<div className="bg-slate-200 min-h-[200px] w-full rounded-xl animate-pulse text-opacity-20 text-center" key={index}>{item}</div>))}
+      :['photo,photo,photo,photo,photo,photo'].map((item,index) => (<div className="bg-slate-200 min-h-[200px] w-full rounded-xl animate-pulse text-opacity-20 text-center" key={index}>{item}</div>))}
       </div> 
       <Footer/> 
     </div>
