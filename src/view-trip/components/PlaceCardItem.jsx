@@ -35,7 +35,9 @@ function PlaceCardItem({ place }) {
         />
         <div className="">
           <h2 className="font-bold text-lg">{place.placeName}</h2>
-          <p className="text-sm text-gray-400 text-wrap">{place.placeDetails}</p>
+          <p className="text-sm text-gray-400 text-wrap">
+            {place.placeDetails}
+          </p>
           <h2 className="text-md text-gray-400">🎫 {place.ticketPricing}</h2>
           {/* <h2 className='text-md text-gray-400'>⌚ {place?.travelTime}</h2> */}
           <Button size="sm">
