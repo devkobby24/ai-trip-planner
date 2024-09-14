@@ -168,10 +168,10 @@ function CreateTrip() {
           {SelectBudgetOptions.map((item, index) => (
             <div
               key={index}
-              onClick={() => handleInputChange("budget", item.title)}
+              onClick={() => handleInputChange("budget", item.amountRange)}
               className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg  flex flex-col items-center md:items-start text-center md:text-left
                   ${
-                    formData.budget === item.title && "shadow-lg border-black"
+                    formData.budget === item.amountRange && "shadow-lg border-black"
                   }  
                 `}
             >
