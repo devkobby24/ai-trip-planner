@@ -56,12 +56,12 @@ function Header() {
           // Display user's profile picture when signed in
           <div className="flex flex-row gap-3">
             <a href="/create-trip">
-            <Button variant="outline" className="rounded-full">
-              Add Trips
+            <Button variant="outline" className="rounded-full text-gray-700">
+              +Create Trip
             </Button>
             </a>
             <a href="/my-trips">
-            <Button variant="outline" className="rounded-full">
+            <Button variant="outline" className="rounded-full text-gray-700">
               My Trips
             </Button>
             </a>

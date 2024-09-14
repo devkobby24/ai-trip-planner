@@ -28,18 +28,17 @@ function InfoSection({ trip }) {
     });
   };
 
-
   const deleteTrip = async () => {
     try {
       const docRef = doc(db, "AI Trips", tripId);
       await deleteDoc(docRef);
       toast("Trip deleted successfully");
-      navigate("/"); // Navigate to home or any other page after deletion
+      navigate("/create-trip"); // Navigate to home or any other page after deletion
     } catch (error) {
       toast.error("Error deleting trip");
       console.error("Error deleting document: ", error);
     }
-  }
+  };
 
   return (
     <div>
@@ -63,14 +62,14 @@ function InfoSection({ trip }) {
             <h2 className="p-1 px-3 bg-slate-200 rounded-full text-gray-400 text-xs md:text-md text-center">
               🥂 {trip?.userSelection?.NumberofTravelers} Traveler(s)
             </h2>
+            
           </div>
         </div>
-        
-         <Button onClick={deleteTrip} variant="destructive">
-          <MdDeleteSweep />
-        </Button>
-      
+            <Button onClick={deleteTrip} variant="destructive" className="ml-full" alt="Delete Trip">
+              <MdDeleteSweep />
+            </Button>
       </div>
+      
     </div>
   );
 }
