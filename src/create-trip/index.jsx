@@ -20,7 +20,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
-import { GiEmptyHourglass } from "react-icons/gi";
+import { AiOutlineLoading } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Footer from "@/view-trip/components/Footer";
 
@@ -212,8 +212,7 @@ function CreateTrip() {
       <div className="mt-10 items-center justify-center flex">
         <Button disabled={loading} onClick={OnGenerateTrip}>
           {loading ? (
-            // <AiOutlineLoading3Quarters className="animate-spin h-7 w-7" />
-            <GiEmptyHourglass className="animate-spin h-7 w-7" />
+            <AiOutlineLoading className="animate-spin h-7 w-7 transition-transform duration-700 ease-out" />
           ) : (
             "Generate Trip"
           )}
