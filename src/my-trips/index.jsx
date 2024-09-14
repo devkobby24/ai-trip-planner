@@ -41,7 +41,7 @@ function MyTrips() {
         {userTrips?.length>0?userTrips.map((trip, index) => (
           <UserTripCardItem key={index} trip={trip}  />
         ))
-      :[1,2,3,4,5,6].map((item,index) => (<div className="bg-gray-200 h-50 w-full rounded-xl animate-pulse" key={index}>{item}</div>))}
+      :[1,2,3,4,5,6].map((item,index) => (<div className="bg-slate-200 min-h-[250px] w-full rounded-xl animate-pulse" key={index}>{item}</div>))}
       </div> 
       <Footer/> 
     </div>
