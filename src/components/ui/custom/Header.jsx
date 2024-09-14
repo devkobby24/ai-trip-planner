@@ -7,7 +7,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useNavigation } from "react-router-dom";
 
 function Header() {
   // State to manage authentication and user profile data

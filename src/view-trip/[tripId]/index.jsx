@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc} from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { db } from "@/service/firebaseConfig";
@@ -24,8 +24,7 @@ function Viewtrip() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists) {
-      // console.log("Document snapshot:", JSON.stringify(docSnap, null, 2));
-      console.log("Document data:", docSnap.data());
+      // console.log("Document data:", docSnap.data());
       setTrip(docSnap.data());
     } else {
       console.log("No such document");
@@ -41,7 +40,7 @@ function Viewtrip() {
           {/* Itinerary section */}
           <PlacesToVisit trip={trip}/>
           {/* footer */}
-          <Footer trip={trip}/>
+          <Footer />
 
         </div>
       

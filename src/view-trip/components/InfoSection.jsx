@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
-import { IoIosSend } from "react-icons/io";
 import { GetPlaceDetails, PHOTO_REF_URL } from "@/service/GlobalApi";
+import { doc, deleteDoc } from "firebase/firestore";
+import { MdDeleteSweep } from "react-icons/md";
+import { toast } from "sonner";
+import { db } from "@/service/firebaseConfig";
+import { useParams, useNavigate } from "react-router-dom";
 
 function InfoSection({ trip }) {
+  const { tripId } = useParams();
   const [photoUrl, setPhotoUrl] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
     trip && GetPlacePhoto();
   }, [trip]);
@@ -21,6 +27,19 @@ function InfoSection({ trip }) {
       setPhotoUrl(PhotoUrl);
     });
   };
+
+
+  const deleteTrip = async () => {
+    try {
+      const docRef = doc(db, "AI Trips", tripId);
+      await deleteDoc(docRef);
+      toast("Trip deleted successfully");
+      navigate("/"); // Navigate to home or any other page after deletion
+    } catch (error) {
+      toast.error("Error deleting trip");
+      console.error("Error deleting document: ", error);
+    }
+  }
 
   return (
     <div>
@@ -46,10 +65,11 @@ function InfoSection({ trip }) {
             </h2>
           </div>
         </div>
-
-        {/* <Button>
-          <IoIosSend />
-        </Button> */}
+        
+         <Button onClick={deleteTrip} variant="destructive">
+          <MdDeleteSweep />
+        </Button>
+      
       </div>
     </div>
   );
