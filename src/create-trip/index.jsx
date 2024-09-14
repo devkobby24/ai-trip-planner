@@ -84,13 +84,12 @@ function CreateTrip() {
     } else {
       setLoading(true);
     }
-      
+
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", formData?.location)
       .replace("{totalDays}", formData?.noOfdays)
       .replace("{traveler}", formData?.NumberofTravelers)
       .replace("{budget}", formData?.budget)
       .replace("{totalDays}", formData?.noOfdays);
-
 
     const result = await chatSession.sendMessage(FINAL_PROMPT);
     // console.log("--", result?.response?.text());
@@ -146,7 +145,7 @@ function CreateTrip() {
           <Input
             placeholder={"Ex.3"}
             type={"number"}
-            min='1'
+            min="1"
             onChange={(e) => {
               const value = parseInt(e.target.value, 10);
               if (value > 0 && value < 6) {
@@ -160,11 +159,10 @@ function CreateTrip() {
       </div>
 
       <div>
-        <h2 className="text-xl my-3 font-medium">
-          What is Your Budget?
-        </h2>
+        <h2 className="text-xl my-3 font-medium">What is Your Budget?</h2>
         <h2 className="text-gray-600 text-lg">
-        The budget is specifically reserved for activities and dining expenses.
+          The budget is specifically reserved for activities and dining
+          expenses.
         </h2>
         <div className="grid grid-cols-3 mt-5 gap-5">
           {SelectBudgetOptions.map((item, index) => (
@@ -203,9 +201,9 @@ function CreateTrip() {
                 }  
               `}
             >
-               <h2 className="text-4xl">{item.icon}</h2>
-               <h2 className="font-bold text-lg ">{item.title}</h2>
-               <h2 className="text-gray-500 text-sm ">{item.desc}</h2>
+              <h2 className="text-4xl">{item.icon}</h2>
+              <h2 className="font-bold text-lg ">{item.title}</h2>
+              <h2 className="text-gray-500 text-sm ">{item.desc}</h2>
             </div>
           ))}
         </div>
