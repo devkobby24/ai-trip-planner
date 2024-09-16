@@ -3,7 +3,7 @@ import { useNavigation } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import UserTripCardItem from "./components/UserTripCardItem";
-import Footer from "@/view-trip/components/Footer";
+import Footer from "@/components/ui/custom/Footer";
 
 function MyTrips() {
   const navigation = useNavigation();
@@ -34,16 +34,19 @@ function MyTrips() {
     });
   };
   return (
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-10 px-5 mt-10">
+    <div>
+    <div className="sm:px-10 lg:px-20  mt-10">
       <h2 className="font-bold text-3xl text-center">My Trips</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5 my-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 my-10 px-5">
         {userTrips?.length>0?userTrips.map((trip, index) => (
-          <UserTripCardItem key={index} trip={trip}  />
+          <UserTripCardItem key={index} trip={trip} />
         ))
       :['photo','photo','photo','photo','photo','photo'].map((item,index) => (<div className="bg-slate-200 min-h-[200px] w-full rounded-xl animate-pulse text-opacity-20 text-center" key={index}>{item}</div>))}
       </div> 
-      <Footer/> 
+       
+    </div>
+    <Footer/>
     </div>
     
   );

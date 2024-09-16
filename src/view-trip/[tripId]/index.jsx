@@ -6,7 +6,7 @@ import { db } from "@/service/firebaseConfig";
 import InfoSection from "../components/InfoSection";
 import Hotels from "../components/Hotels";
 import PlacesToVisit from "../components/PlacesToVisit";
-import Footer from "../components/Footer";
+import Footer from "../../components/ui/custom/Footer";
 
 function Viewtrip() {
   
@@ -32,18 +32,18 @@ function Viewtrip() {
     }
   };
   return (
-        <div className="p-10 md:px-20 lg:px-44 xl:px-60">
+        <>
+        <div className="p-10">
           {/* Information section */}
           <InfoSection trip={trip}/>
           {/* Recommended Hotels */}
           <Hotels trip={trip}/>
           {/* Itinerary section */}
           <PlacesToVisit trip={trip}/>
-          {/* footer */}
-          <Footer />
-
         </div>
-      
+        <Footer />
+
+        </>
       )
 }
 
