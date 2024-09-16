@@ -65,7 +65,7 @@ function Header() {
               My Trips
             </Button>
             </a>
-            <Popover>
+            <Popover size="md">
               <PopoverTrigger asChild>
                 <img
                   src={user.picture}

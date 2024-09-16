@@ -22,7 +22,7 @@ function MyTrips() {
     }
 
     const q = query(
-      collection(db, "AI Trips"),
+      collection(db, "users"),
       where("userEmail", "==", user?.email)
     );
 

@@ -20,7 +20,7 @@ function Viewtrip() {
    * used to get trip information from firebase
    */
   const GetTripData = async () => {
-    const docRef = doc(db, "AI Trips", tripId);
+    const docRef = doc(db, "users", tripId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists) {

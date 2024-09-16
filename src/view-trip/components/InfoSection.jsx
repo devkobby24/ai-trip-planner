@@ -30,7 +30,7 @@ function InfoSection({ trip }) {
 
   const deleteTrip = async () => {
     try {
-      const docRef = doc(db, "AI Trips", tripId);
+      const docRef = doc(db, "users", tripId);
       await deleteDoc(docRef);
       toast("Trip deleted successfully");
       navigate("/create-trip"); // Navigate to home or any other page after deletion
