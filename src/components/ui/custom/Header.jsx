@@ -65,7 +65,7 @@ function Header() {
               My Trips
             </Button>
             </a>
-            <Popover size="md">
+            <Popover>
               <PopoverTrigger asChild>
                 <img
                   src={user.picture}
@@ -73,7 +73,7 @@ function Header() {
                   className="rounded-full w-9 h-9"
                 />
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent className="w-40 mx-4 my-2 pl-3 bg-transparent border-transparent">
                 <a href="/">
                 <Button onClick={()=>{
                   googleLogout();
