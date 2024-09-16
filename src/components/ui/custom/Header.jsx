@@ -7,6 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { LiaDoorOpenSolid } from "react-icons/lia";
 
 function Header() {
   // State to manage authentication and user profile data
@@ -80,7 +81,7 @@ function Header() {
                   localStorage.clear();
                   // navigation("/")
                   window.location.reload();
-                }}>Log Out</Button>
+                }} >Log Out<LiaDoorOpenSolid size={20}/></Button>
                 </a>
               </PopoverContent>
             </Popover>
