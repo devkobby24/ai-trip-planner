@@ -20,9 +20,12 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
-import { AiOutlineLoading } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Footer from "@/view-trip/components/Footer";
+import { quantum } from 'ldrs'
+
+
+
 
 function CreateTrip() {
   const [place, setPlace] = useState();
@@ -30,6 +33,7 @@ function CreateTrip() {
   const [formData, setFormData] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  quantum.register()
 
   const handleInputChange = (name, value) => {
     setFormData({
@@ -212,7 +216,11 @@ function CreateTrip() {
       <div className="mt-10 items-center justify-center flex">
         <Button disabled={loading} onClick={OnGenerateTrip}>
           {loading ? (
-            <AiOutlineLoading className="animate-spin h-7 w-7 transition-transform duration-700 ease-out" />
+            <l-quantum
+            size="35"
+            speed="1.8" 
+            color="white" 
+          ></l-quantum>
           ) : (
             "Generate Trip"
           )}
