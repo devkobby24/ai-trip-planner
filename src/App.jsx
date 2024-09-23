@@ -1,14 +1,16 @@
-import './App.css'
-import Hero from './components/ui/custom/Hero'
-import Footer from './components/ui/custom/Footer'
+import "./App.css";
+import Hero from "./components/ui/custom/Hero";
+import Footer from "./components/ui/custom/Footer";
 
 function App() {
   return (
     <>
-      <Hero/>
-      <Footer />
+      <div className="w-full min-w-full">
+        <Hero />
+        <Footer />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
