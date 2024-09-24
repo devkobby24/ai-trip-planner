@@ -22,21 +22,21 @@ function UserTripCardItem({ trip }) {
   };
   return (
     <Link to={"/view-trip/" + trip.id} className={"text-gray-950"}>
-    <div className="hover:scale-105 transition-all cursor-pointer">
-      <img
-        src={photoUrl ? photoUrl : "/placeholder.jpg"}
-        className="object-cover rounded-xl w-full max-w-[300px] h-[200px]"
-      />
-      <div className="mt-4">
-        <h2 className="font-bold text-lg">
-          📍 {trip?.userSelection?.location}
-        </h2>
-        <h2 className="text-sm text-gray-500">
-          🏞️ {trip.userSelection.noOfdays}-day trip with{" "}
-          {trip.userSelection.budget} budget{" "}
-        </h2>
+      <div className="hover:scale-105 transition-all cursor-pointer px-5 w-full rounded-lg">
+        <img
+          src={photoUrl ? photoUrl : "/placeholder.jpg"}
+          className="object-cover rounded-xl min-w-full h-[200px]"
+        />
+        <div className="mt-4">
+          <h2 className="font-bold text-lg">
+            📍 {trip?.userSelection?.location}
+          </h2>
+          <h2 className="text-sm text-gray-500">
+            🏞️ {trip.userSelection.noOfdays}-day trip with{" "}
+            {trip.userSelection.budget} budget{" "}
+          </h2>
+        </div>
       </div>
-    </div>
     </Link>
   );
 }
