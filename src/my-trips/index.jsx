@@ -46,7 +46,7 @@ function MyTrips() {
             : ["photo", "photo", "photo", "photo", "photo", "photo"].map(
                 (item, index) => (
                   <div
-                    className="bg-slate-200 min-h-[200px] rounded-xl animate-pulse text-opacity-20 text-center max-w-[300px]"
+                    className="bg-slate-200 min-h-[200px] rounded-xl animate-pulse text-opacity-20 text-center w-full"
                     key={index}
                   >
                     {item}

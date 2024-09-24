@@ -22,7 +22,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import Footer from "@/components/ui/custom/Footer";
-import { quantum } from 'ldrs'
+import { grid } from 'ldrs'
 
 
 
@@ -33,7 +33,7 @@ function CreateTrip() {
   const [formData, setFormData] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  quantum.register()
+  grid.register()
 
   const handleInputChange = (name, value) => {
     setFormData({
@@ -169,7 +169,7 @@ function CreateTrip() {
           The budget is specifically reserved for activities and dining
           expenses.
         </h2>
-        <div className="grid grid-cols-3 mt-5 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 mt-5 gap-5">
           {SelectBudgetOptions.map((item, index) => (
             <div
               key={index}
@@ -193,7 +193,7 @@ function CreateTrip() {
         <h2 className="text-xl my-3 font-medium">
           Who do you plan to travel with on your next adventure?
         </h2>
-        <div className="grid grid-cols-3 mt-5 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 mt-5 gap-5">
           {SelectTraveleroptions.map((item, index) => (
             <div
               key={index}
@@ -217,13 +217,13 @@ function CreateTrip() {
       </div>
 
       <div className="mt-10 items-center justify-center flex">
-        <Button disabled={loading} onClick={OnGenerateTrip}>
+        <Button disabled={loading} onClick={OnGenerateTrip} size="lg">
           {loading ? (
-            <l-quantum
+            <l-grid
             size="35"
             speed="1.8" 
             color="white" 
-          ></l-quantum>
+          ></l-grid>
           ) : (
             "Generate Trip"
           )}

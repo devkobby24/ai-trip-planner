@@ -14,12 +14,12 @@ function Hero() {
         </span>
       </h1>
 
-      <p className="text-xl text-gray-500 text-center">
+      <p className="text-xl text-gray-500 text-center mb-5">
         Your personal trip planner and travel curator, creating the custom
         itineraries tailored to your interests and budget.
       </p>
       <Link to={"/create-trip"}>
-        <Button>Get Started!</Button>
+        <Button variant="default" size="lg">Get Started!</Button>
       </Link>
 
       <img
