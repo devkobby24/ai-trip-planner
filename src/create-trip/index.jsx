@@ -221,7 +221,7 @@ function CreateTrip() {
           {loading ? (
             <l-grid
             size="35"
-            speed="1.8" 
+            speed="0.5" 
             color="white" 
           ></l-grid>
           ) : (
