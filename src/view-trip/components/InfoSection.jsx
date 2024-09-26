@@ -6,47 +6,95 @@ import { MdDeleteSweep } from "react-icons/md";
 import { toast } from "sonner";
 import { db } from "@/service/firebaseConfig";
 import { useParams, useNavigate } from "react-router-dom";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 function InfoSection({ trip }) {
   const { tripId } = useParams();
-  const [photoUrl, setPhotoUrl] = useState();
+  const [photoUrls, setPhotoUrls] = useState([]); // Store multiple photos
+  const [currentIndex, setCurrentIndex] = useState(0); // Track current photo
   const navigate = useNavigate();
+
   useEffect(() => {
     trip && GetPlacePhoto();
   }, [trip]);
+
+  // Fetch place photos and store in state
   const GetPlacePhoto = async () => {
     const data = {
       textQuery: trip?.userSelection?.location,
     };
     const result = await GetPlaceDetails(data).then((resp) => {
-      console.log(resp.data.places[0].photos[3].name);
-      const PhotoUrl = PHOTO_REF_URL.replace(
-        "{NAME}",
-        resp.data.places[0].photos[9].name
+      const photos = resp.data.places[0].photos.map((photo) =>
+        PHOTO_REF_URL.replace("{NAME}", photo.name)
       );
-      setPhotoUrl(PhotoUrl);
+      setPhotoUrls(photos); // Set all photos in state
     });
   };
 
+  // Function to delete the trip document from Firebase
   const deleteTrip = async () => {
     try {
       const docRef = doc(db, "users", tripId);
       await deleteDoc(docRef);
       toast("Trip deleted successfully");
-      navigate("/create-trip"); // Navigate to home or any other page after deletion
+      navigate("/create-trip"); // Navigate to another page after deletion
     } catch (error) {
       toast.error("Error deleting trip");
       console.error("Error deleting document: ", error);
     }
   };
 
+  // Function to go to the next photo
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === photoUrls.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to go to the previous photo
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? photoUrls.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div>
-      <img
-        src={photoUrl ? photoUrl : "/city.jpg"}
-        alt="placeholder"
-        className="h-[350px] w-full object-cover rounded-xl"
-      />
+      {/* Display current photo or placeholder if no photo */}
+      <div className="relative w-full h-[350px]">
+        {photoUrls.length > 0 ? (
+          <>
+            <img
+              src={photoUrls[currentIndex]}
+              alt={`Place ${currentIndex}`}
+              className="h-[350px] w-full object-cover rounded-xl"
+            />
+            {/* Previous Button */}
+            <Button
+              onClick={prevSlide}
+              className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full focus:outline-none"
+            >
+             <GrPrevious />           
+            </Button>
+
+            {/* Next Button */}
+            <Button
+              onClick={nextSlide}
+              className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full focus:outline-none"
+            >
+            <GrNext />
+            </Button>
+          </>
+        ) : (
+          <img
+            src="/city.jpg"
+            alt="placeholder"
+            className="h-[350px] w-full object-contain rounded-xl"
+          />
+        )}
+      </div>
+
+      {/* Info Section */}
       <div className="flex justify-between items-center gap-5">
         <div className="my-5 flex flex-col gap-2">
           <h2 className="font-bold text-2xl">
@@ -64,6 +112,8 @@ function InfoSection({ trip }) {
             </h2>
           </div>
         </div>
+
+        {/* Delete Button */}
         <Button
           onClick={deleteTrip}
           variant="destructive"
