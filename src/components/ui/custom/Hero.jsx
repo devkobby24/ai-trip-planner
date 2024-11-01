@@ -19,8 +19,12 @@ function Hero() {
         itineraries tailored to your interests and budget.
       </p>
       <Link to={"/create-trip"}>
-        <Button variant="default" size="lg">Get Started!</Button>
+        <Button variant="default" size="lg">
+          Get Started!
+        </Button>
       </Link>
+
+      {/* <button onClick={() => {throw new Error("This is your first error!");}}>Break the world</button>; */}
 
       <img
         src="/landing.jpg"
