@@ -87,9 +87,9 @@ function InfoSection({ trip }) {
           </>
         ) : (
           <img
-            src="/city.jpg"
+            src="/city1.jpg"
             alt="placeholder"
-            className="h-[350px] w-full object-contain rounded-xl"
+            className="h-[350px] w-full object-cover rounded-xl"
           />
         )}
       </div>

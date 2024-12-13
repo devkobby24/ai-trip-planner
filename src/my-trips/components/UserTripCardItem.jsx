@@ -4,27 +4,27 @@ import { Link } from "react-router-dom";
 
 function UserTripCardItem({ trip }) {
   const [photoUrl, setPhotoUrl] = useState();
-  useEffect(() => {
-    trip && GetPlacePhoto();
-  }, [trip]);
-  const GetPlacePhoto = async () => {
-    const data = {
-      textQuery: trip.userSelection.location,
-    };
-    const result = await GetPlaceDetails(data).then((resp) => {
-      //   console.log(resp.data.places[0].photos[3].name);
-      const PhotoUrl = PHOTO_REF_URL.replace(
-        "{NAME}",
-        resp.data.places[0].photos[4].name
-      );
-      setPhotoUrl(PhotoUrl);
-    });
-  };
+  // useEffect(() => {
+  //   trip && GetPlacePhoto();
+  // }, [trip]);
+  // const GetPlacePhoto = async () => {
+  //   const data = {
+  //     textQuery: trip.userSelection.location,
+  //   };
+  //   const result = await GetPlaceDetails(data).then((resp) => {
+  //     //   console.log(resp.data.places[0].photos[3].name);
+  //     const PhotoUrl = PHOTO_REF_URL.replace(
+  //       "{NAME}",
+  //       resp.data.places[0].photos[4].name
+  //     );
+  //     setPhotoUrl(PhotoUrl);
+  //   });
+  // };
   return (
     <Link to={"/view-trip/" + trip.id} className={"text-gray-950"}>
       <div className="hover:scale-105 transition-all cursor-pointer px-5 w-full rounded-lg">
         <img
-          src={photoUrl ? photoUrl : "/placeholder.jpg"}
+          src={photoUrl ? photoUrl : "/city1.jpg"}
           className="object-cover rounded-xl min-w-full h-[200px]"
         />
         <div className="mt-4">
