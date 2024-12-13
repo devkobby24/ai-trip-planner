@@ -37,3 +37,9 @@
 .read-the-docs {
   color: #888;
 }
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; /* Supports variable weights */
+  font-style: normal;
+}

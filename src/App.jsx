@@ -4,12 +4,10 @@ import Footer from "./components/ui/custom/Footer";
 
 function App() {
   return (
-    <>
-      <div className="w-full min-w-full">
-        <Hero />
-        <Footer />
-      </div>
-    </>
+    <div className="min-w-full">
+      <Hero />
+      <Footer />
+    </div>
   );
 }
 

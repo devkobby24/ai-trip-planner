@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { doc, getDoc} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { db } from "@/service/firebaseConfig";
@@ -9,9 +9,8 @@ import PlacesToVisit from "../components/PlacesToVisit";
 import Footer from "../../components/ui/custom/Footer";
 
 function Viewtrip() {
-  
   const { tripId } = useParams();
-  const [trip, setTrip] = useState([])
+  const [trip, setTrip] = useState([]);
 
   useEffect(() => {
     tripId && GetTripData();
@@ -32,19 +31,18 @@ function Viewtrip() {
     }
   };
   return (
-        <>
-        <div className="p-10">
-          {/* Information section */}
-          <InfoSection trip={trip}/>
-          {/* Recommended Hotels */}
-          <Hotels trip={trip}/>
-          {/* Itinerary section */}
-          <PlacesToVisit trip={trip}/>
-        </div>
-        <Footer />
-
-        </>
-      )
+    <>
+      <div className="p-10 lg:mx-52">
+        {/* Information section */}
+        <InfoSection trip={trip} />
+        {/* Recommended Hotels */}
+        <Hotels trip={trip} />
+        {/* Itinerary section */}
+        <PlacesToVisit trip={trip} />
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default Viewtrip;

@@ -49,7 +49,7 @@ function Header() {
   });
 
   return (
-    <div className="p-3 shadow-sm flex justify-between items-center px-5">
+    <div className="p-3 shadow-sm bg-gray-800 rounded-b-3xl text-white flex justify-between items-center px-5">
       <a href="/">
         <img
           src="/logo.svg"
@@ -62,7 +62,7 @@ function Header() {
           // Display user's profile picture when signed in
           <div className="flex flex-row gap-3">
             <a href="/create-trip">
-              <Button variant="outline" className="rounded-full text-gray-700">
+              <Button variant="outline" className="border-2 border-green-400 bg-gray-400 rounded-full text-gray-700">
                 <span className="block sm:hidden">
                   <MdAddLocationAlt size={22} />
                 </span>
@@ -70,7 +70,7 @@ function Header() {
               </Button>
             </a>
             <a href="/my-trips">
-              <Button variant="outline" className="rounded-full text-gray-700">
+              <Button variant="outline" className="border-2 border-green-400 bg-gray-400 rounded-full text-gray-700">
                 History
               </Button>
             </a>

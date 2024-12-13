@@ -6,11 +6,8 @@ import { IoLogoWhatsapp } from "react-icons/io";
 
 function Footer() {
   return (
-    <div className="pb-2 pt-10 w-full flex justify-between items-center px-5">
-      <div className="min-w-full mx-auto flex justify-between items-center">
-        <div className="text-left ml-2 flex flex-row gap-5">
-          <h2 className="text-sm text-gray-400">ツ</h2>
-        </div>
+    
+      <div className="min-w-full mx-auto flex justify-center items-center p-5 lg:px-20 lg:py-10 bg-gray-800 text-white mt-20 rounded-t-3xl">
         <div className="flex space-x-4">
           <a
             href="mailto:nanakobby2002@gmail.com"
@@ -42,7 +39,7 @@ function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    
   );
 }
 
